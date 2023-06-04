@@ -1,6 +1,6 @@
 import humbergerIcon from "../assets/images/icon-hamburger.svg";
 import closeIcon from "../assets/images/icon-close.svg";
-
+import logoIcon from "../assets/images/logo.svg";
 type Props = {
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,23 +18,33 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
           <a href="/">home</a>
         </li>
         <li>
-        <a href="#" onClick={() => setIsOpen(false)}>shop</a>
+          <a href="#" onClick={() => setIsOpen(false)}>
+            shop
+          </a>
         </li>
         <li>
-          <a href="#about" onClick={() => setIsOpen(false)}>about</a>
+          <a href="#about" onClick={() => setIsOpen(false)}>
+            about
+          </a>
         </li>
         <li>
-          <a href="#" onClick={() => setIsOpen(false)}>contact</a>
+          <a href="#" onClick={() => setIsOpen(false)}>
+            contact
+          </a>
         </li>
       </ul>
     </div>
   ) : (
     <div className="lg:hidden">
-      <button className="absolute top-8 left-6" onClick={() => setIsOpen(true)}>
+      <button className="absolute top-9 left-6" onClick={() => setIsOpen(true)}>
         <img src={humbergerIcon} alt="humbergerIcon" />
       </button>
 
-      <h2 className="absolute top-6 left-[43%] text-White text-2xl">room</h2>
+      <img
+        src={logoIcon}
+        alt="room-logo"
+        className="absolute top-9 left-[40%]"
+      />
     </div>
   );
   return (
@@ -51,10 +61,18 @@ const Navbar = ({ isOpen, setIsOpen }: Props) => {
           <a href="/">room</a>
         </h2>
         <ul className="flex items-center gap-5 space-x-4 ml-4">
-          <li><a href="">home</a></li>
-          <li><a href="">about</a></li>
-          <li><a href="">shop</a></li>
-          <li><a href="">contact</a></li>
+          <li>
+            <a href="">home</a>
+          </li>
+          <li>
+            <a href="">about</a>
+          </li>
+          <li>
+            <a href="">shop</a>
+          </li>
+          <li>
+            <a href="">contact</a>
+          </li>
         </ul>
       </div>
     </nav>
