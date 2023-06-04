@@ -25,6 +25,22 @@ const TopComponent = ({ isOpen, setIsOpen }: Props) => {
   const [imgArr, setImgArr] = useState(mobileHeroImgs);
 
   useEffect(() => {
+    const handleKeydown = (e:KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        handlePrevImg();
+      } else if (e.key === "ArrowRight") {
+        handleNextImg();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, [imgArr, index]);
+
+  useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
       if (screenWidth <= 1024) {
