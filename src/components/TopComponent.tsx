@@ -75,29 +75,32 @@ const TopComponent = ({ isOpen, setIsOpen }: Props) => {
 
   return (
     <>
-      <div className="lg:col-span-3 relative">
+      <div className="lg:col-span-8 relative">
         <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-        <button className="absolute flex bg-Black gap-9 p-4 items-center bottom-0  right-0 lg:-right-[91px]">
-          <img
-            src={arrowLeft}
-            alt="arrow-left-icon"
-            className="w-3 h-4 cursor-pointer"
-            onClick={handlePrevImg}
-          />
-          <img
-            src={arrowRight}
-            alt="arrow-right-icon"
-            className="w-3 h-4 cursor-pointer"
-            onClick={handleNextImg}
-          />
-        </button>
+        <div className="bg-Black flex absolute bottom-0 right-0 items-center lg:-right-[120px] gap-3">
+          <button className="px-5 py-2">
+            <img
+              src={arrowLeft}
+              alt="arrow-left-icon"
+              onClick={handlePrevImg}
+            />
+          </button>
+          <button className="px-5 py-2">
+            <img
+              src={arrowRight}
+              alt="arrow-right-icon"
+              onClick={handleNextImg}
+            />
+          </button>
+        </div>
+
         <img
           src={imgArr[index]}
           alt="hero-section-img"
           className="w-full lg:h-[600px]"
         />
       </div>
-      <article className="flex flex-col justify-center gap-2 px-4 bg-White py-8 lg:col-span-2 lg:h-full lg:px-16">
+      <article className="flex flex-col justify-center gap-2 px-4 bg-White py-8 lg:col-span-4 lg:h-full lg:px-16">
         <h2 className="text-4xl font-bold mb-2">
           Discover innovative ways to decorate
         </h2>
