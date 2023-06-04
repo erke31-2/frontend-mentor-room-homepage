@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import mobileHeroImg1 from "../assets/images/mobile-image-hero-1.jpg";
 import mobileHeroImg2 from "../assets/images/mobile-image-hero-2.jpg";
 import mobileHeroImg3 from "../assets/images/mobile-image-hero-3.jpg";
@@ -23,6 +24,22 @@ const TopComponent = ({ isOpen, setIsOpen }: Props) => {
   const mobileHeroImgs = [mobileHeroImg1, mobileHeroImg2, mobileHeroImg3];
   const desktHeroImgs = [desktHeroImg1, desktHeroImg2, desktHeroImg3];
   const [imgArr, setImgArr] = useState(mobileHeroImgs);
+
+  useEffect(() => {
+    const handleKeydown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") {
+        handlePrevImg();
+      } else if (e.key === "ArrowRight") {
+        handleNextImg();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeydown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeydown);
+    };
+  }, [imgArr, index]);
 
   useEffect(() => {
     const handleResize = () => {
