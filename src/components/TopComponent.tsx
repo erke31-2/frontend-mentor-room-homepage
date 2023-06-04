@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import mobileHeroImg1 from "../assets/images/mobile-image-hero-1.jpg";
 import mobileHeroImg2 from "../assets/images/mobile-image-hero-2.jpg";
 import mobileHeroImg3 from "../assets/images/mobile-image-hero-3.jpg";
@@ -25,7 +26,7 @@ const TopComponent = ({ isOpen, setIsOpen }: Props) => {
   const [imgArr, setImgArr] = useState(mobileHeroImgs);
 
   useEffect(() => {
-    const handleKeydown = (e:KeyboardEvent) => {
+    const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
         handlePrevImg();
       } else if (e.key === "ArrowRight") {
