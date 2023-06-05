@@ -23,8 +23,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/erke31-2/frontend-mentor-room-homepage/]
+- Live Site URL: [https://deft-chebakia-7889c5.netlify.app/]
 
 ## My process
 
