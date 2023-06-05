@@ -33,6 +33,21 @@ const TopComponent = ({ isOpen, setIsOpen }: Props) => {
   const desktHeroImgs = [desktHeroImg1, desktHeroImg2, desktHeroImg3];
   const [imgArr, setImgArr] = useState(mobileHeroImgs);
 
+  const contents: contentsProps = [
+    {
+      title: "Discover innovative ways to decorate",
+      body: "We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.",
+    },
+    {
+      title: "We are available all across the globe",
+      body: "With stores all over the world, it's easy for you to find furniture for your home or place of business. Locally, we're in most major cities throughout the country. Find the branch nearest you using our store locator. Any questions? Don't hesitate to contact us today.",
+    },
+    {
+      title: "Manufactured with the best materials",
+      body: "Our modern furniture store provide a high level of quality. Our company has invested in advanced technology to ensure that every product is made as perfect and as consistent as possible. With three decades of experience in this industry, we understand what customers want for their home and office.",
+    },
+  ];
+
   useEffect(() => {
     const handleResize = () => {
       const screenWidth = window.innerWidth;
@@ -92,17 +107,8 @@ const TopComponent = ({ isOpen, setIsOpen }: Props) => {
           className="w-full lg:h-[600px]"
         />
       </div>
-      <article className="flex flex-col justify-center gap-2 px-4 bg-White py-8 lg:col-span-2 lg:h-full lg:px-16">
-        <h2 className="text-4xl font-bold mb-2">
-          Discover innovative ways to decorate
-        </h2>
-        <p className="text-Darkgray">
-          We provide unmatched quality, comfort, and style for property owners
-          across the country. Our experts combine form and function in bringing
-          your vision to life. Create a room in your own style with our
-          collection and make your property a reflection of you and what you
-          love.
-        </p>
+      <article className="flex flex-col justify-center gap-2 px-4 bg-White py-8 lg:col-span-4 lg:h-full lg:px-16">
+        <Article title={contents[index].title} body={contents[index].body} />
         <a href="#" className="w-[70%] flex items-center mt-5 gap-8">
           <div className="space-x-3">
             <span>S</span>
